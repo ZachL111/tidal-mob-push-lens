@@ -1,0 +1,73 @@
+{
+  "repo": "tidal-mob-push-lens",
+  "language": "Go",
+  "category": "Mobile workflows",
+  "goal": "Create a Go reference implementation for push workflows, centered on event replay, fixture event logs, and golden state snapshots.",
+  "review_model": {
+    "terms": [
+      "form pressure",
+      "sync drift",
+      "local state",
+      "conflict cost"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "form pressure",
+      "signal": 74,
+      "slack": 20,
+      "drag": 10,
+      "confidence": 53,
+      "score": 191,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "sync drift",
+      "signal": 62,
+      "slack": 44,
+      "drag": 24,
+      "confidence": 47,
+      "score": 143,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "local state",
+      "signal": 68,
+      "slack": 47,
+      "drag": 8,
+      "confidence": 70,
+      "score": 229,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "conflict cost",
+      "signal": 62,
+      "slack": 21,
+      "drag": 19,
+      "confidence": 88,
+      "score": 176,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "form pressure",
+      "signal": 89,
+      "slack": 39,
+      "drag": 15,
+      "confidence": 68,
+      "score": 240,
+      "lane": "ship"
+    }
+  ]
+}
